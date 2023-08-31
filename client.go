@@ -23,10 +23,10 @@ func main() {
 	
 
 	response, err := client.CreateCustomer(context.Background(), &pb.Details{
-		CustomerId: 317,
-		Firstname:  "Jsri",
+		CustomerId: 176,
+		Firstname:  "Ishu",
 		Lastname:   "R",
-		BankId:     12345,
+		BankId:     67890,
 		Balance:    100000,
 		IsActive:   false,
 	})

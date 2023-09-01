@@ -1,13 +1,13 @@
 package main
 
 import (
-	"github.com/Thashmi03/netxd_customer_connectors/constants"
 	"context"
 	"fmt"
 
+	"github.com/Thashmi03/netxd_customer_connectors/constants"
+
 	"log"
 
-	
 	pb "github.com/Thashmi03/netxd_customer"
 	"google.golang.org/grpc"
 )
@@ -21,7 +21,7 @@ func main() {
 	defer conn.Close()
 
 	client := pb.NewCustomerServiceClient(conn)
-	
+
 
 	response, err := client.CreateCustomer(context.Background(), &pb.Details{
 		CustomerId: 107,

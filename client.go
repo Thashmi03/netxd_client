@@ -24,7 +24,7 @@ func main() {
 
 
 	response, err := client.CreateCustomer(context.Background(), &pb.Details{
-		CustomerId: 107,
+		CustomerId: 117,
 		Firstname:  "Abi",
 		Lastname:   "S",
 		BankId:     67890,
@@ -35,16 +35,16 @@ func main() {
 		log.Fatalf("Failed to call: %v", err)
 	}
 
-	res, err := client.CreateCustomer(context.Background(), &pb.Details{
-		CustomerId: 107,
-		Firstname:  "Abi",
-		Lastname:   "S",
-		BankId:     67890,
-		Balance:    100000,
-		IsActive:   false,
+	res, err := client.Transfer(context.Background(), &pb.Request{
+			TransactionId: 00001,
+			FromAccount:   317,
+			ToAccount:     318,
+			Amount:         100,
+		
 	})
 	if err != nil {
 		log.Fatalf("Failed to call: %v", err)
 	}
 	fmt.Printf("CustomerID: %d\nCreatedTime:%v\n", response.CustomerId,response.CreatedAt)
+	fmt.Printf("CustomerID: %d\n", res.TransactionId)
 }

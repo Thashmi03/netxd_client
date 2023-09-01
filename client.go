@@ -46,5 +46,5 @@ func main() {
 		log.Fatalf("Failed to call: %v", err)
 	}
 	fmt.Printf("CustomerID: %d\nCreatedTime:%v\n", response.CustomerId,response.CreatedAt)
-	fmt.Printf("CustomerID: %d\n", res.TransactionId)
+	fmt.Println(res)
 }
